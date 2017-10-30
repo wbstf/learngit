@@ -9,3 +9,6 @@ Git is free software distributed under the GPL.
 Creating a new branch is quick.
 Creating a new branch is quick and simple.
 分支管理策略
+
+
+修改bug001
