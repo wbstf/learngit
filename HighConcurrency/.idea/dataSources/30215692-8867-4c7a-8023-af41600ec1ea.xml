@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="seckill@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="imooc">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mldn"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="seckill">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="9" parent="1" name="articel_spider"/>
+    <schema id="10" parent="1" name="micro_message"/>
+    <schema id="11" parent="1" name="mmall"/>
+    <schema id="12" parent="1" name="public_comment"/>
+    <table id="13" parent="2" name="comment"/>
+    <table id="14" parent="2" name="post"/>
+    <table id="15" parent="2" name="reply"/>
+    <table id="16" parent="2" name="t_student"/>
+    <table id="17" parent="2" name="tran_account"/>
+    <table id="18" parent="2" name="user"/>
+    <table id="19" parent="8" name="seckill">
+      <Comment>库存秒杀表</Comment>
+    </table>
+    <table id="20" parent="8" name="success_killed">
+      <Comment>秒杀成功明细表</Comment>
+    </table>
+    <routine id="21" parent="8" name="execute_seckill">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="22" parent="13" name="cid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="13" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="24" parent="13" name="rid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="25" parent="13" name="uid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="26" parent="13" name="comment_time">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="27" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="14" name="pid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="14" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="30" parent="14" name="title">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="31" parent="14" name="publish_time">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="32" parent="14" name="reply_time">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="33" parent="14" name="read_num">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="14" name="like_num">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="35" parent="14" name="repl_num">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="36" parent="14" name="cid">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="37" parent="14" name="rid">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="14" name="uid">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="39" parent="14" name="cid_idx">
+      <ColNames>cid</ColNames>
+    </index>
+    <index id="40" parent="14" name="rid_idx">
+      <ColNames>rid</ColNames>
+    </index>
+    <index id="41" parent="14" name="uid_idx">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="42" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="14" name="cid">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>imooc</RefSchemaName>
+      <RefTableName>comment</RefTableName>
+      <RefColNames>cid</RefColNames>
+    </foreign-key>
+    <foreign-key id="44" parent="14" name="rid">
+      <ColNames>rid</ColNames>
+      <RefSchemaName>imooc</RefSchemaName>
+      <RefTableName>reply</RefTableName>
+      <RefColNames>rid</RefColNames>
+    </foreign-key>
+    <foreign-key id="45" parent="14" name="uid">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>imooc</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="46" parent="15" name="rid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="15" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="48" parent="15" name="reply_time">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="49" parent="15" name="uid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="50" parent="15" name="pid">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="51" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="52" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="53" parent="16" name="stu_name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;null&apos;</DefaultExpression>
+    </column>
+    <column id="54" parent="16" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="55" parent="16" name="address">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;null&apos;</DefaultExpression>
+    </column>
+    <column id="56" parent="16" name="gender">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="57" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="59" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="17" name="money">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <key id="61" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="62" parent="18" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="18" name="nick_name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="18" name="email">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="18" name="password">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="18" name="last_time">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="67" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="68" parent="19" name="seckill_id">
+      <Position>1</Position>
+      <Comment>商品库存id</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="69" parent="19" name="name">
+      <Position>2</Position>
+      <Comment>商品名称</Comment>
+      <DataType>varchar(120)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="19" name="start_time">
+      <Position>3</Position>
+      <Comment>秒杀开始时间</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="71" parent="19" name="numbers">
+      <Position>4</Position>
+      <Comment>库存数量</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="19" name="end_time">
+      <Position>5</Position>
+      <Comment>秒杀的结束时间</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="73" parent="19" name="create_time">
+      <Position>6</Position>
+      <Comment>创建时间</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="74" parent="19" name="idx_create_time">
+      <ColNames>create_time</ColNames>
+    </index>
+    <index id="75" parent="19" name="idx_end_time">
+      <ColNames>end_time</ColNames>
+    </index>
+    <index id="76" parent="19" name="idx_start_time">
+      <ColNames>start_time</ColNames>
+    </index>
+    <key id="77" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>seckill_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="78" parent="20" name="seckill_id">
+      <Position>1</Position>
+      <Comment>秒杀商品id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="20" name="user_phone">
+      <Position>2</Position>
+      <Comment>用户手机号</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="20" name="state">
+      <Position>3</Position>
+      <Comment>状态表示:-1 无效 0:成功  1:已付款 2:已发货</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;-1&apos;</DefaultExpression>
+    </column>
+    <column id="81" parent="20" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="82" parent="20" name="idx_create_time">
+      <ColNames>create_time</ColNames>
+    </index>
+    <key id="83" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>seckill_id
+user_phone</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <argument id="84" parent="21" name="v_seckill_id">
+      <DataType>bigint(20)|0</DataType>
+    </argument>
+    <argument id="85" parent="21" name="v_phone">
+      <DataType>bigint(20)|0</DataType>
+    </argument>
+    <argument id="86" parent="21" name="v_kill_time">
+      <DataType>timestamp|0</DataType>
+    </argument>
+    <argument id="87" parent="21" name="r_result">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>bigint(20)|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>
